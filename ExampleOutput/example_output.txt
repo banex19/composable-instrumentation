@@ -1,0 +1,49 @@
+[0;31mOnly tool instrumement.c
+[0m
+[instrument.c] Instrumented before call to [test.c]printf
+Hey
+[instrument.c] Instrumented after call to [test.c]printf
+[instrument.c] Instrumented before call to [test.c]_Z19longRunningFunctionv
+[instrument.c] Instrumented after call to [test.c]_Z19longRunningFunctionv
+[instrument.c] Instrumented before call to [test.c]puts
+Bye
+[instrument.c] Instrumented after call to [test.c]puts
+
+[0;31mOnly tool time.cpp
+[0m
+Hey
+[time.cpp] Function [test.c]printf took 0 ms (17741 ns)
+[time.cpp] Function [test.c]_Z19longRunningFunctionv took 238 ms (238480649 ns)
+Bye
+[time.cpp] Function [test.c]puts took 0 ms (4555 ns)
+
+[0;31mBoth instrument.c and time.cpp - multiplexed for target program and no tool composing
+[0m
+[instrument.c] Instrumented before call to [test.c]printf
+Hey
+[instrument.c] Instrumented after call to [test.c]printf
+[time.cpp] Function [test.c]printf took 0 ms (8977 ns)
+[instrument.c] Instrumented before call to [test.c]_Z19longRunningFunctionv
+[instrument.c] Instrumented after call to [test.c]_Z19longRunningFunctionv
+[time.cpp] Function [test.c]_Z19longRunningFunctionv took 237 ms (237862826 ns)
+[instrument.c] Instrumented before call to [test.c]puts
+Bye
+[instrument.c] Instrumented after call to [test.c]puts
+[time.cpp] Function [test.c]puts took 0 ms (3586 ns)
+
+[0;31mBoth instrument.c and time.cpp - only the first tool used for target program and chained composition for tools
+[0m
+[instrument.c] Instrumented before call to [test.c]printf
+[time.cpp] Function [instrument.c]printf took 0 ms (48712 ns)
+Hey
+[instrument.c] Instrumented after call to [test.c]printf
+[time.cpp] Function [instrument.c]printf took 0 ms (741 ns)
+[instrument.c] Instrumented before call to [test.c]_Z19longRunningFunctionv
+[time.cpp] Function [instrument.c]printf took 0 ms (524 ns)
+[instrument.c] Instrumented after call to [test.c]_Z19longRunningFunctionv
+[time.cpp] Function [instrument.c]printf took 0 ms (6966 ns)
+[instrument.c] Instrumented before call to [test.c]puts
+[time.cpp] Function [instrument.c]printf took 0 ms (549 ns)
+Bye
+[instrument.c] Instrumented after call to [test.c]puts
+[time.cpp] Function [instrument.c]printf took 0 ms (526 ns)
