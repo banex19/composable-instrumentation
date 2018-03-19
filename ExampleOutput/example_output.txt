@@ -1,5 +1,5 @@
-[0;31mOnly tool instrumement.c
-[0m
+Only tool instrumement.c
+
 [instrument.c] Instrumented before call to [test.c]printf
 Hey
 [instrument.c] Instrumented after call to [test.c]printf
@@ -9,41 +9,41 @@ Hey
 Bye
 [instrument.c] Instrumented after call to [test.c]puts
 
-[0;31mOnly tool time.cpp
-[0m
-Hey
-[time.cpp] Function [test.c]printf took 0 ms (17741 ns)
-[time.cpp] Function [test.c]_Z19longRunningFunctionv took 238 ms (238480649 ns)
-Bye
-[time.cpp] Function [test.c]puts took 0 ms (4555 ns)
+Only tool time.cpp
 
-[0;31mBoth instrument.c and time.cpp - multiplexed for target program and no tool composing
-[0m
+Hey
+[time.cpp] Function [test.c]printf took 0 ms (18286 ns)
+[time.cpp] Function [test.c]_Z19longRunningFunctionv took 231 ms (231202390 ns)
+Bye
+[time.cpp] Function [test.c]puts took 0 ms (3777 ns)
+
+Both instrument.c and time.cpp - multiplexed for target program and no tool composing
+
 [instrument.c] Instrumented before call to [test.c]printf
 Hey
 [instrument.c] Instrumented after call to [test.c]printf
-[time.cpp] Function [test.c]printf took 0 ms (8977 ns)
+[time.cpp] Function [test.c]printf took 0 ms (9903 ns)
 [instrument.c] Instrumented before call to [test.c]_Z19longRunningFunctionv
 [instrument.c] Instrumented after call to [test.c]_Z19longRunningFunctionv
-[time.cpp] Function [test.c]_Z19longRunningFunctionv took 237 ms (237862826 ns)
+[time.cpp] Function [test.c]_Z19longRunningFunctionv took 234 ms (234880385 ns)
 [instrument.c] Instrumented before call to [test.c]puts
 Bye
 [instrument.c] Instrumented after call to [test.c]puts
-[time.cpp] Function [test.c]puts took 0 ms (3586 ns)
+[time.cpp] Function [test.c]puts took 0 ms (4925 ns)
 
-[0;31mBoth instrument.c and time.cpp - only the first tool used for target program and chained composition for tools
-[0m
+Both instrument.c and time.cpp - only the first tool used for target program and chained composition for tools
+
 [instrument.c] Instrumented before call to [test.c]printf
-[time.cpp] Function [instrument.c]printf took 0 ms (48712 ns)
+[time.cpp] Function [instrument.c]printf took 0 ms (36347 ns)
 Hey
 [instrument.c] Instrumented after call to [test.c]printf
-[time.cpp] Function [instrument.c]printf took 0 ms (741 ns)
+[time.cpp] Function [instrument.c]printf took 0 ms (740 ns)
 [instrument.c] Instrumented before call to [test.c]_Z19longRunningFunctionv
-[time.cpp] Function [instrument.c]printf took 0 ms (524 ns)
+[time.cpp] Function [instrument.c]printf took 0 ms (576 ns)
 [instrument.c] Instrumented after call to [test.c]_Z19longRunningFunctionv
-[time.cpp] Function [instrument.c]printf took 0 ms (6966 ns)
+[time.cpp] Function [instrument.c]printf took 0 ms (19607 ns)
 [instrument.c] Instrumented before call to [test.c]puts
-[time.cpp] Function [instrument.c]printf took 0 ms (549 ns)
+[time.cpp] Function [instrument.c]printf took 0 ms (608 ns)
 Bye
 [instrument.c] Instrumented after call to [test.c]puts
-[time.cpp] Function [instrument.c]printf took 0 ms (526 ns)
+[time.cpp] Function [instrument.c]printf took 0 ms (484 ns)

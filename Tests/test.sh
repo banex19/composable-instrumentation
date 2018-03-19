@@ -1,7 +1,7 @@
 #!/bin/sh
 
 RED='\033[0;31m'
-NC='\033[0m' # No Color
+NC='\033[0m'
 
 echo  "${RED}Only tool instrumement.c\n${NC}"
 clang++ -Wno-deprecated -Xclang -load  -Xclang ./../build/InstrumentPass/libInstrumentPass.so -mllvm "-instrument-tools" -mllvm "instrument.c" test.c instrument.c 
