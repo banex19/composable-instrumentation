@@ -18,3 +18,6 @@ clang++ -Wno-deprecated -Xclang -load  -Xclang ./../build/InstrumentPass/libInst
 echo  "\n${RED}Both instrument.c and time.cpp - only the first tool used for target program and chained composition for tools\n${NC}"
 clang++ -Wno-deprecated -Xclang -load  -Xclang ./../build/InstrumentPass/libInstrumentPass.so -mllvm "-instrument-tools" -mllvm "instrument.c" -mllvm "-instrument-tools" -mllvm "time.cpp" -mllvm "-target-instrumentation" -mllvm "FirstToolOnly"  -mllvm "-compose-function" -mllvm "Chained"  test.c instrument.c time.cpp
 ./a.out
+
+
+rm a.out
